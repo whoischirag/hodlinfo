@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hodlinfo Clone</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <script type="text/javascript">
+      var apiUrl = "/api/crypto";
+      fetch(apiUrl)
+        .then((response) => {
+          return response.json();
+        })
+        .then((data) => {
+console.log(data.length)
+let temp = ""; // Initialize an empty string to accumulate HTML
+data.forEach((crypto, index) => {
+    temp += "<tr>";
+    temp += "<th scope=row>" + (index + 1) + "</th>"; // Displaying 1-based index
+    temp += "<td >" + crypto.name + "</td>";
+    temp += "<td>" + crypto.last + "</td>";
+    // Calculate buy/sell ratio (assuming both are non-zero numbers)
+    temp += "<td>" + (crypto.buy +" / "+ crypto.sell)+ "</td>"; // Example: Fixed to 2 decimal places
+    temp += "<td>" + crypto.volume + "</td>";
+    temp += "<td>" + crypto.base_unit + "</td>";
+    temp += "</tr>";
+});
+
+// Set the innerHTML of the element with id="data"
+document.getElementById("data").innerHTML = temp;
+
+
+          console.log(data);
+        })
+        .catch((err) => {
+          // Do something for an error here
+        });
+    </script>
+  </head>
+  <body>
+    <header>
+      <div class="container">
+        <div class="brand">
+          <h2>HODLINFO</h2>
+        </div>
+        <nav>
+          <ul class="centered">
+            <li>
+              <select id="dropdown1" class="dropdown">
+                <option value="#">INR</option>
+                <option value="#">USD</option>
+                <option value="#">YEN</option>
+                <option value="#">EUR</option>
+              </select>
+            </li>
+            <li>
+              <select id="dropdown2" class="dropdown">
+                <option value="#">BTC</option>
+                <option value="#">ETH</option>
+                <option value="#">DOGDE</option>
+                <option value="#">DDY</option>
+              </select>
+            </li>
+            <li>
+              <select id="dropdown3" class="dropdown">
+                <option value="#">Buy BTC</option>
+              </select>
+            </li>
+          </ul>
+          <ul class="right">
+            <li>
+              <button id="telebutton">Connect Telegram</button>
+            </li>
+            <li>
+              <label class="switch">
+                <input type="checkbox" />
+                <span class="slider round"></span>
+              </label>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="headdiv">
+        <div class="one">
+          <h1 style="color: #5dc7c2; font-size: 30px">0.29%</h1>
+          <h3 style="color: #76787f; font-size: 15px">5 mins</h3>
+        </div>
+        <div class="two">
+          <h1 style="color: #5dc7c2; font-size: 40px">0.69%</h1>
+          <h3 style="color: #76787f; font-size: 15px">1 hour</h3>
+        </div>
+        <div class="three">
+          <h2 style="color: #76787f; font-size: 20px">Best price to trade!</h2>
+          <h1 style="font-size: 50px">₹50,45,000</h1>
+          <h3 style="color: #76787f; font-size: 13px">
+            Average BTC/INR net price including commission
+          </h3>
+        </div>
+        <div class="four">
+          <h1 style="color: #5dc7c2; font-size: 40px">7.29%</h1>
+          <h3 style="color: #76787f; font-size: 15px">1 day</h3>
+        </div>
+        <div class="five">
+          <h1 style="color: #5dc7c2; font-size: 30px">8.89%</h1>
+          <h3 style="color: #76787f; font-size: 15px">7 Days</h3>
+        </div>
+      </div>
+
+      <div class="container">
+        <table class="table table-dark">
+          <thead>
+            <tr  >
+              <th scope="col" >#</th>
+              <th scope="col">Name</th>
+              <th scope="col">Last</th>
+              <th scope="col" >Buy/Sell</th>
+              <th scope="col">Volume</th>
+              <th scope="col">Base-Unit</th>
+            </tr> 
+          </thead>
+          <tbody id="data"></tbody>
+        </table>
+      </div>
+    </section>
+
+    <footer>
+      <div class="container">
+        <div class="footer-content">
+          <ul>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Use</a></li>
+          </ul>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>

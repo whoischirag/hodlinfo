@@ -1,0 +1,299 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.dropdown {
+  display: inline-block;
+  background-color: #2e3241;
+  color: white;
+  padding: 5px 5px;
+  text-decoration: none;
+  border-radius: 10px;
+  border: none;
+  font-size: 1.1em;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  background-color: #191d28;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.table {
+  width: 100%;
+  margin: 0 auto;
+  border-collapse: collapse;
+}
+
+.table th,
+.table td {
+  padding: 10px;
+  text-align: left;
+}
+
+.table th {
+  background-color: transparent;
+  color: white;
+  font-weight: normal;
+}
+
+.table tbody tr {
+  background-color: #2e3241;
+}
+
+header {
+  background-color: #191d28;
+  color: #ffffff;
+  padding: 10px 0;
+}
+
+header .brand {
+  float: left;
+}
+
+header .brand h2 {
+  font-family: bronlink;
+  color: #00bcdc;
+  font-size: 28px;
+  margin: 0;
+}
+
+header .logo img {
+  height: 50px;
+  vertical-align: middle;
+}
+
+header nav ul {
+  list-style-type: none;
+  text-align: right;
+}
+
+header nav ul select {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+header nav ul li {
+  display: inline-block;
+  margin-left: 20px;
+}
+
+header nav ul li a {
+  color: #ffffff;
+  text-decoration: none;
+  padding: 10px;
+}
+
+header .brand h2 {
+  font-family: bronlink;
+  color: #6ccacb;
+  font-size: 50px;
+}
+
+.hero {
+  background-color: #191d28;
+  color: #ffffff;
+  text-align: center;
+  padding: 100px 0;
+}
+
+.hero h1 {
+  font-size: 2.5em;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 1.2em;
+  margin-bottom: 30px;
+}
+
+.cta-button {
+  display: inline-block;
+  background-color: #2e3241;
+  color: #ffffff;
+  padding: 15px 30px;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1.1em;
+  transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+  background-color: #76787f;
+}
+
+footer {
+  background-color: #191d28;
+  color: #ffffff;
+  padding: 20px 0;
+}
+
+footer ul {
+  list-style-type: none;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+footer ul li {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+footer ul li a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.social-icons {
+  text-align: center;
+}
+
+.social-icons a {
+  display: inline-block;
+  margin: 0 10px;
+}
+
+.social-icons img {
+  height: 30px;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+#telebutton {
+  display: inline-block;
+  background-color: #3dc6c1;
+  color: white;
+  padding: 12px 20px;
+  text-decoration: none;
+  border-radius: 12px;
+  font-size: 1.1em;
+  transition: background-color 0.3s;
+  margin-left: 15px;
+}
+
+#telebutton:hover {
+  background-color: #2e3241;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  float: right;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+}
+
+nav ul li {
+  margin-left: 10px;
+}
+
+nav ul.centered {
+  flex: 1;
+  justify-content: center;
+}
+
+nav ul.right {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+}
+
+.headdiv {
+  display: flex; /* Use flexbox for layout */
+  justify-content: space-between; /* Distribute items evenly along the main axis */
+  align-items: center; /* Center items vertically */
+}
+
+.headdiv > div {
+  flex: 1;
+  padding: 10px;
+
+  text-align: center;
+}
+
+.one,
+.three {
+  flex-basis: 30%; /* Adjust width for specific divs if needed */
+}
+
+.two,
+.four,
+.five {
+  flex-basis: 10%; /* Adjust width for specific divs if needed */
+}
